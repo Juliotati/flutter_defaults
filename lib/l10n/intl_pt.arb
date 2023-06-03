@@ -1,0 +1,11 @@
+{
+  "@@locale": "pt",
+  "appName": "Padrões do Flutter",
+  "counterButtonDisplayTitle": "{count, plural, zero {Incrementa ou decrementa o contador} one {o valor do contador é um \uD83D\uDC40} two {o valor do contador é {count} \uD83D\uDE17} other {o valor do contador é {count} \uD83D\uDD25}}",
+  "youPressedThisButtonThisManyTimes": "{count, plural, zero {Você não pressionou o contador} one {Você pressionou o contador uma vez \uD83D\uDC4C} other {Você pressionou {count} \uD83D\uDD25 vezes}}",
+  "increment": "Incrementar",
+  "decrement": "Diminuir",
+  "pathProvider": "Trajeto Provider",
+  "pathRiverpod": "Trajeto Riverpod",
+  "pathBloc": "Trajeto Bloc"
+}
