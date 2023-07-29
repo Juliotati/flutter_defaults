@@ -2,7 +2,7 @@ part of provider_path;
 
 @injectable
 class GetCounterValue extends CounterUseCase<int?, NoParams> {
-  GetCounterValue(this._repository);
+  GetCounterValue(@Named.from(CounterRepositoryImpl) this._repository);
 
   final CounterRepository _repository;
 

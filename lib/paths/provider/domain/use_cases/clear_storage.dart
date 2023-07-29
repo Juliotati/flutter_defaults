@@ -2,7 +2,7 @@ part of provider_path;
 
 @injectable
 class ClearStorage extends CounterUseCase<void, NoParams> {
-  ClearStorage(this._repository);
+  ClearStorage(@Named.from(CounterRepositoryImpl) this._repository);
 
   final CounterRepository _repository;
 

@@ -1,6 +1,8 @@
 part of provider_path;
 
-class CounterRemoteDataSource extends CounterDataSource {
+@named
+@Injectable(as: CounterDataSource)
+final class CounterRemoteDataSource extends CounterDataSource {
   @override
   Future<void> clearStorage() {
     // TODO: implement remote clearStorage

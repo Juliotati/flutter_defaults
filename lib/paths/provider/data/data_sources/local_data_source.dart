@@ -4,9 +4,10 @@ enum PrefsKey {
   counter,
 }
 
-@lazySingleton
-final class CounterLocalDataSource extends CounterDataSource {
-  CounterLocalDataSource(this._sharedPreferences);
+@named
+@Injectable(as: CounterDataSource)
+final class CounterLocalDataSourceImpl extends CounterDataSource {
+  CounterLocalDataSourceImpl(this._sharedPreferences);
 
   final SharedPreferences _sharedPreferences;
 

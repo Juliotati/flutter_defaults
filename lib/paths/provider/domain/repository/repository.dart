@@ -1,9 +1,18 @@
 part of provider_path;
 
-abstract interface class CounterRepository {
-  Future<({Exception? exception, void value})> saveCounterValue(int counter);
+interface class CounterRepository {
+  Future<({Exception? exception, void value})> saveCounterValue(int counter) {
+    // TODO: implement saveCounterValue
+    throw UnimplementedError();
+  }
 
-  Future<({Exception? exception, int? value})> counter();
+  Future<({Exception? exception, int? value})> counter() {
+    // TODO: implement counter
+    throw UnimplementedError();
+  }
 
-  Future<({Exception? exception, void value})> clearStorage();
+  Future<({Exception? exception, void value})> clearStorage() {
+    // TODO: implement clearStorage
+    throw UnimplementedError();
+  }
 }

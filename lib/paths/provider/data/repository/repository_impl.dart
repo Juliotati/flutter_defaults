@@ -1,10 +1,13 @@
 part of provider_path;
 
-@injectable
-class CounterRepositoryImpl implements CounterRepository {
-  CounterRepositoryImpl(this._localDataSource);
+@named
+@Injectable(as: CounterRepository)
+final class CounterRepositoryImpl implements CounterRepository {
+  CounterRepositoryImpl(
+    @Named.from(CounterLocalDataSourceImpl) this._localDataSource,
+  );
 
-  final CounterLocalDataSource _localDataSource;
+  final CounterDataSource _localDataSource;
 
   @override
   Future<({Exception? exception, void value})> saveCounterValue(
