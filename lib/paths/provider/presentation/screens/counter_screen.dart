@@ -1,7 +1,7 @@
-part of provider_path;
+part of '../../provider_path.dart';
 
 class ProviderPath extends StatefulWidget {
-  const ProviderPath({super.key, required this.title});
+  const ProviderPath({required this.title, super.key});
 
   final String title;
 

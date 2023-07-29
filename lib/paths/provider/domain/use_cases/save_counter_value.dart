@@ -1,4 +1,4 @@
-part of provider_path;
+part of '../../provider_path.dart';
 
 @injectable
 class SaveCounterValue extends CounterUseCase<void, CounterParams> {
@@ -8,7 +8,8 @@ class SaveCounterValue extends CounterUseCase<void, CounterParams> {
 
   @override
   Future<({Exception? exception, void value})> call(
-      CounterParams params) async {
+    CounterParams params,
+  ) async {
     return _repository.saveCounterValue(params.value);
   }
 }

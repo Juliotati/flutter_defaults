@@ -1,4 +1,4 @@
-part of provider_path;
+part of '../../provider_path.dart';
 
 class _CounterControlButtons extends StatelessWidget {
   const _CounterControlButtons({super.key});

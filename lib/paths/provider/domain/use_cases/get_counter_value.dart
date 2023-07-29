@@ -1,4 +1,4 @@
-part of provider_path;
+part of '../../provider_path.dart';
 
 @injectable
 class GetCounterValue extends CounterUseCase<int?, NoParams> {
