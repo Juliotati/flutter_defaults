@@ -17,9 +17,10 @@ If you are new to Flutter, please first follow the [Flutter Setup](https://flutt
 ```
 git clone https://github.com/juliotati/flutter_defaults.git
 cd flutter_defaults
+
 flutter clean
 flutter pub get
-flutter pub run build_runner build --delete-conflicting-outputs
+flutter packages pub run build_runner build --delete-conflicting-outputs
 ```
 
 Build and install the Flutter app to your connected device/emulator.
