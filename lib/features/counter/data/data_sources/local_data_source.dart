@@ -1,4 +1,4 @@
-part of '../../provider_path.dart';
+part of '../../counter.dart';
 
 enum PrefsKey {
   counter,

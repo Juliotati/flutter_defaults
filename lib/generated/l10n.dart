@@ -107,6 +107,16 @@ class AppLocal {
     );
   }
 
+  /// `Paths`
+  String get paths {
+    return Intl.message(
+      'Paths',
+      name: 'paths',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Provider Path`
   String get pathProvider {
     return Intl.message(

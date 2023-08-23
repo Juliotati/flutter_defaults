@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pathBloc": MessageLookupByLibrary.simpleMessage("Bloc Path"),
         "pathProvider": MessageLookupByLibrary.simpleMessage("Provider Path"),
         "pathRiverpod": MessageLookupByLibrary.simpleMessage("Riverpod Path"),
+        "paths": MessageLookupByLibrary.simpleMessage("Paths"),
         "youPressedThisButtonThisManyTimes": m1
       };
 }

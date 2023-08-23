@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Trajeto Provider"),
         "pathRiverpod":
             MessageLookupByLibrary.simpleMessage("Trajeto Riverpod"),
+        "paths": MessageLookupByLibrary.simpleMessage("Trajetos"),
         "youPressedThisButtonThisManyTimes": m1
       };
 }

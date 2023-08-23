@@ -5,6 +5,7 @@
   "youPressedThisButtonThisManyTimes": "{count, plural, zero {Você não pressionou o contador} one {Você pressionou o contador uma vez \uD83D\uDC4C} other {Você pressionou {count} \uD83D\uDD25 vezes}}",
   "increment": "Incrementar",
   "decrement": "Diminuir",
+  "paths": "Trajetos",
   "pathProvider": "Trajeto Provider",
   "pathRiverpod": "Trajeto Riverpod",
   "pathBloc": "Trajeto Bloc"

@@ -1,4 +1,4 @@
-part of '../../provider_path.dart';
+part of '../../counter.dart';
 
 class _CounterDisplay extends StatelessWidget {
   const _CounterDisplay({super.key});

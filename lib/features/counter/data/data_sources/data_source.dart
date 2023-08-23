@@ -1,4 +1,4 @@
-part of '../../provider_path.dart';
+part of '../../counter.dart';
 
 interface class CounterDataSource {
   Future<void> saveCounterValue(int counter) {

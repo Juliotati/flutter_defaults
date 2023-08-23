@@ -9,9 +9,9 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter_defaults/paths/provider/presentation/providers/counter_provider.dart'
+import 'package:flutter_defaults/features/counter/counter.dart' as _i3;
+import 'package:flutter_defaults/features/counter/presentation/providers/counter_provider.dart'
     as _i5;
-import 'package:flutter_defaults/paths/provider/provider_path.dart' as _i3;
 import 'package:flutter_defaults/services/shared_preferences_module.dart'
     as _i6;
 import 'package:get_it/get_it.dart' as _i1;

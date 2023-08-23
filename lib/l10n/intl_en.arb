@@ -5,6 +5,7 @@
   "youPressedThisButtonThisManyTimes": "{count, plural, zero {You haven't pressed the counter} one {You pressed counter once \uD83D\uDC4C} other {You've pressed {count} \uD83D\uDD25 times}}",
   "increment": "Increment",
   "decrement": "Decrement",
+  "paths": "Paths",
   "pathProvider": "Provider Path",
   "pathRiverpod": "Riverpod Path",
   "pathBloc": "Bloc Path"

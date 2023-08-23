@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_defaults/core/use_cases/counter_use_case.dart';
-import 'package:flutter_defaults/paths/provider/provider_path.dart';
+import 'package:flutter_defaults/features/counter/counter.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

@@ -1,4 +1,4 @@
-part of '../../provider_path.dart';
+part of '../../counter.dart';
 
 interface class CounterRepository {
   Future<({Exception? exception, void value})> saveCounterValue(int counter) {

@@ -1,9 +1,7 @@
-part of '../../provider_path.dart';
+part of '../../counter.dart';
 
 class ProviderPath extends StatefulWidget {
-  const ProviderPath({required this.title, super.key});
-
-  final String title;
+  const ProviderPath({super.key});
 
   @override
   State<ProviderPath> createState() => _ProviderPathState();
@@ -15,8 +13,8 @@ class _ProviderPathState extends State<ProviderPath> {
   late String appBarTitle;
 
   void _setPathTitle() {
-    appBarTitle = widget.title;
-    Future.delayed(const Duration(milliseconds: 1000), () {
+    appBarTitle = defaultTitle;
+    Future.delayed(const Duration(milliseconds: 100), () {
       setState(() => appBarTitle = pathTitle);
     });
   }
@@ -38,9 +36,9 @@ class _ProviderPathState extends State<ProviderPath> {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: AnimatedSwitcher(
             switchInCurve: Curves.easeIn,
-            duration: const Duration(milliseconds: 400),
+            duration: const Duration(milliseconds: 1000),
             switchOutCurve: Curves.easeOut,
-            reverseDuration: const Duration(milliseconds: 100),
+            reverseDuration: const Duration(milliseconds: 400),
             child: Align(
               alignment: Alignment.centerLeft,
               key: Key('Align<$appBarTitle>'),
@@ -52,10 +50,13 @@ class _ProviderPathState extends State<ProviderPath> {
           ),
         ),
         body: const _CounterDisplay(
-          key: Key('counter_display'),
+          key: Key('provider_counter_display'),
         ),
-        floatingActionButton: const _CounterControlButtons(
-          key: Key('counter_control_buttons'),
+        floatingActionButton: const HeroMode(
+          enabled: false,
+          child: _CounterControlButtons(
+            key: Key('provider_counter_control_buttons'),
+          ),
         ),
       ),
     );
