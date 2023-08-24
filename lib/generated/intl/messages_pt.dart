@@ -28,9 +28,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "appName": MessageLookupByLibrary.simpleMessage("Padrões do Flutter"),
+        "awaitingImplementation":
+            MessageLookupByLibrary.simpleMessage("Aguardando implementação"),
+        "changeLanguage": MessageLookupByLibrary.simpleMessage("Mudar idioma"),
         "counterButtonDisplayTitle": m0,
         "decrement": MessageLookupByLibrary.simpleMessage("Diminuir"),
+        "flutterPaths":
+            MessageLookupByLibrary.simpleMessage("Trajetos em Flutter"),
         "increment": MessageLookupByLibrary.simpleMessage("Incrementar"),
         "pathBloc": MessageLookupByLibrary.simpleMessage("Trajeto Bloc"),
         "pathProvider":

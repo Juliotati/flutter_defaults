@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_defaults/flutter_defaults.dart';
-import 'package:flutter_defaults/features/counter/counter.dart';
+import 'package:flutter_defaults/core/widgets/awaiting_implementation.dart';
+import 'package:flutter_defaults/features/bloc_counter/bloc_counter.dart';
+import 'package:flutter_defaults/features/provider_counter/provider_counter.dart';
+import 'package:flutter_defaults/flutter_paths.dart';
 import 'package:go_router/go_router.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -40,7 +42,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       name: AppRoute.riverpodPath.name,
       path: AppRoute.riverpodPath.path,
-      builder: (_, state) => const RiverpodPath(),
+      builder: (_, state) => const AwaitingImplementation(),
     ),
     GoRoute(
       name: AppRoute.providerPath.name,

@@ -1,10 +1,12 @@
 {
   "@@locale": "en",
-  "appName": "Flutter Defaults",
+  "awaitingImplementation": "Awaiting Implementation",
+  "changeLanguage": "Change language",
   "counterButtonDisplayTitle": "{count, plural, zero {Increment or decrement counter} one {Counter value is at one \uD83D\uDC40} two {Counter value is {count} \uD83D\uDE17} other {Counter value is {count} \uD83D\uDD25}}",
   "youPressedThisButtonThisManyTimes": "{count, plural, zero {You haven't pressed the counter} one {You pressed counter once \uD83D\uDC4C} other {You've pressed {count} \uD83D\uDD25 times}}",
   "increment": "Increment",
   "decrement": "Decrement",
+  "flutterPaths": "Flutter Paths",
   "paths": "Paths",
   "pathProvider": "Provider Path",
   "pathRiverpod": "Riverpod Path",

@@ -50,11 +50,21 @@ class AppLocal {
     return Localizations.of<AppLocal>(context, AppLocal);
   }
 
-  /// `Flutter Defaults`
-  String get appName {
+  /// `Awaiting Implementation`
+  String get awaitingImplementation {
     return Intl.message(
-      'Flutter Defaults',
-      name: 'appName',
+      'Awaiting Implementation',
+      name: 'awaitingImplementation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change language`
+  String get changeLanguage {
+    return Intl.message(
+      'Change language',
+      name: 'changeLanguage',
       desc: '',
       args: [],
     );
@@ -102,6 +112,16 @@ class AppLocal {
     return Intl.message(
       'Decrement',
       name: 'decrement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Flutter Paths`
+  String get flutterPaths {
+    return Intl.message(
+      'Flutter Paths',
+      name: 'flutterPaths',
       desc: '',
       args: [],
     );
