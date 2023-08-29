@@ -27,7 +27,11 @@ class _BlocPathState extends State<BlocPath> {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<CounterCubit>(create: (context) => getIt<CounterCubit>()),
+        BlocProvider(
+          create: (_) => CounterBloc(
+            getIt.get<CounterRepository>(instanceName: 'CounterRepositoryImpl'),
+          ),
+        ),
       ],
       child: Scaffold(
         appBar: AppBar(

@@ -5,22 +5,21 @@ import 'package:flutter_defaults/features/bloc_counter/bloc_counter.dart';
 import 'package:flutter_defaults/features/bloc_counter/presentation/bloc/bloc_state.dart';
 import 'package:injectable/injectable.dart';
 
-@lazySingleton
-class CounterCubit extends Cubit<CounterCubicState> {
+class CounterCubit extends Cubit<CounterValidState> {
   CounterCubit(@Named.from(CounterRepositoryImpl) this._repository)
-      : super(const CounterCubicState(0)) {
+      : super(const CounterValidState(0)) {
     _restoreCounterValue();
   }
 
   final CounterRepository _repository;
 
   void increment() {
-    emit(CounterCubicState(state.count + 1));
+    emit(CounterValidState(state.count + 1));
     _cacheCounterValue();
   }
 
   void decrement() {
-    emit(CounterCubicState(state.count - 1));
+    emit(CounterValidState(state.count - 1));
     _cacheCounterValue();
   }
 
@@ -33,7 +32,7 @@ class CounterCubit extends Cubit<CounterCubicState> {
     final result = await _repository.counter();
     if (result.exception != null) return;
 
-    emit(CounterCubicState(result.value ?? 0));
+    emit(CounterValidState(result.value ?? 0));
 
     log('RESTORED COUNTER VALUE [${result.value}]');
   }

@@ -11,14 +11,12 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter_defaults/features/bloc_counter/bloc_counter.dart'
     as _i3;
-import 'package:flutter_defaults/features/bloc_counter/presentation/bloc/counter_cubit.dart'
-    as _i6;
 import 'package:flutter_defaults/features/provider_counter/presentation/providers/counter_provider.dart'
-    as _i7;
+    as _i6;
 import 'package:flutter_defaults/features/provider_counter/provider_counter.dart'
     as _i4;
 import 'package:flutter_defaults/services/shared_preferences_module.dart'
-    as _i8;
+    as _i7;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:shared_preferences/shared_preferences.dart' as _i5;
@@ -73,9 +71,7 @@ Future<_i1.GetIt> initGetIt(
       gh<_i4.CounterRepository>(instanceName: 'CounterRepositoryImpl')));
   gh.factory<_i4.ClearStorage>(() => _i4.ClearStorage(
       gh<_i4.CounterRepository>(instanceName: 'CounterRepositoryImpl')));
-  gh.lazySingleton<_i6.CounterCubit>(() => _i6.CounterCubit(
-      gh<_i3.CounterRepository>(instanceName: 'CounterRepositoryImpl')));
-  gh.lazySingleton<_i7.CounterProvider>(() => _i7.CounterProvider(
+  gh.lazySingleton<_i6.CounterProvider>(() => _i6.CounterProvider(
         gh<_i4.SaveCounterValue>(),
         gh<_i4.GetCounterValue>(),
         gh<_i4.ClearStorage>(),
@@ -83,4 +79,4 @@ Future<_i1.GetIt> initGetIt(
   return getIt;
 }
 
-class _$PreferencesModule extends _i8.PreferencesModule {}
+class _$PreferencesModule extends _i7.PreferencesModule {}

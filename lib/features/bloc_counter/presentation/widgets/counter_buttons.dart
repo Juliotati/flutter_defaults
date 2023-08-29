@@ -5,17 +5,18 @@ class _BlocCounterControlButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<CounterBloc>();
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         FloatingActionButton(
-          onPressed: context.read<CounterCubit>().increment,
+          onPressed: () => bloc.add(const CounterIncremented()),
           tooltip: AppLocal.of(context).increment,
           child: const Icon(Icons.add),
         ),
         const SizedBox(height: 16.0),
         FloatingActionButton(
-          onPressed: context.read<CounterCubit>().decrement,
+          onPressed: () => bloc.add(const CounterDecremented()),
           tooltip: AppLocal.of(context).decrement,
           child: const Icon(Icons.remove),
         ),
