@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_defaults/core/config/app_router.dart';
 import 'package:flutter_defaults/core/config/localization_delegates.dart';
 import 'package:flutter_defaults/core/extensions/context.dart';
+import 'package:flutter_defaults/gen/fonts.gen.dart';
 import 'package:flutter_defaults/generated/l10n.dart';
 
 final class FlutterPaths extends StatelessWidget {
@@ -14,6 +15,7 @@ final class FlutterPaths extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationDelegates(),
       theme: ThemeData(
+        fontFamily: FontFamily.openSans,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
