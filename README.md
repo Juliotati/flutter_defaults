@@ -25,5 +25,5 @@ dart run build_runner build --delete-conflicting-outputs;
 
 Build and install the Flutter app to your connected device/emulator.
 ```
-flutter run
+flutter run -d chrome
 ```
