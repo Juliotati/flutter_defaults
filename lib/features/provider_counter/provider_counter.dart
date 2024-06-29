@@ -1,11 +1,11 @@
 library provider_counter;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_defaults/core/config/di/provider_di.dart';
+import 'package:flutter_defaults/core/config/di/app_di.dart';
+import 'package:flutter_defaults/core/extensions/context.dart';
 import 'package:flutter_defaults/core/use_cases/counter_use_case.dart';
 import 'package:flutter_defaults/core/widgets/counter_padding.dart';
 import 'package:flutter_defaults/features/provider_counter/presentation/providers/counter_provider.dart';
-import 'package:flutter_defaults/generated/l10n.dart';
 import 'package:injectable/injectable.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

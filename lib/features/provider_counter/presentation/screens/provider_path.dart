@@ -1,6 +1,6 @@
 part of '../../provider_counter.dart';
 
-class ProviderPath extends StatefulWidget {
+final class ProviderPath extends StatefulWidget {
   const ProviderPath({super.key});
 
   @override
@@ -11,15 +11,15 @@ class _ProviderPathState extends State<ProviderPath> {
   late String appBarTitle;
 
   void _setPathTitle() {
-    appBarTitle = AppLocal.current.flutterPaths;
+    appBarTitle = context.i18n.flutterPaths;
     Future.delayed(const Duration(milliseconds: 100), () {
-      setState(() => appBarTitle = AppLocal.current.pathProvider);
+      setState(() => appBarTitle = context.i18n.pathProvider);
     });
   }
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     _setPathTitle();
   }
 
@@ -27,7 +27,7 @@ class _ProviderPathState extends State<ProviderPath> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ListenableProvider(create: (_) => getIt.get<CounterProvider>()),
+        ListenableProvider(create: (_) => sl.get<CounterProvider>()),
       ],
       child: Scaffold(
         appBar: AppBar(

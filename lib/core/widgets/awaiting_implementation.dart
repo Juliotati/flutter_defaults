@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_defaults/generated/l10n.dart';
+import 'package:flutter_defaults/core/extensions/context.dart';
 
-class AwaitingImplementation extends StatelessWidget {
+final class AwaitingImplementation extends StatelessWidget {
   const AwaitingImplementation({super.key});
 
   @override
@@ -9,8 +9,8 @@ class AwaitingImplementation extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Text(
-          AppLocal.of(context).awaitingImplementation,
-          style: Theme.of(context).textTheme.headlineMedium,
+          context.i18n.awaitingImplementation,
+          style: context.textTheme.headlineMedium,
         ),
       ),
     );

@@ -2,12 +2,12 @@ library bloc_counter;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_defaults/core/config/di/provider_di.dart';
+import 'package:flutter_defaults/core/config/di/app_di.dart';
+import 'package:flutter_defaults/core/extensions/context.dart';
 import 'package:flutter_defaults/core/widgets/counter_padding.dart';
 import 'package:flutter_defaults/features/bloc_counter/presentation/bloc/bloc_event.dart';
 import 'package:flutter_defaults/features/bloc_counter/presentation/bloc/bloc_state.dart';
 import 'package:flutter_defaults/features/bloc_counter/presentation/bloc/counter_bloc.dart';
-import 'package:flutter_defaults/generated/l10n.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

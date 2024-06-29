@@ -1,6 +1,6 @@
 part of '../../provider_counter.dart';
 
-class _ProviderCounterControlButtons extends StatelessWidget {
+final class _ProviderCounterControlButtons extends StatelessWidget {
   const _ProviderCounterControlButtons({super.key});
 
   @override
@@ -10,13 +10,13 @@ class _ProviderCounterControlButtons extends StatelessWidget {
       children: [
         FloatingActionButton(
           onPressed: context.read<CounterProvider>().increment,
-          tooltip: AppLocal.of(context).increment,
+          tooltip: context.i18n.increment,
           child: const Icon(Icons.add),
         ),
         const SizedBox(height: 16.0),
         FloatingActionButton(
           onPressed: context.read<CounterProvider>().decrement,
-          tooltip: AppLocal.of(context).decrement,
+          tooltip: context.i18n.decrement,
           child: const Icon(Icons.remove),
         ),
       ],

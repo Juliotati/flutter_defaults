@@ -1,6 +1,6 @@
 part of '../../bloc_counter.dart';
 
-class _BlocCounterControlButtons extends StatelessWidget {
+final class _BlocCounterControlButtons extends StatelessWidget {
   const _BlocCounterControlButtons({super.key});
 
   @override
@@ -11,13 +11,13 @@ class _BlocCounterControlButtons extends StatelessWidget {
       children: [
         FloatingActionButton(
           onPressed: () => bloc.add(const CounterIncremented()),
-          tooltip: AppLocal.of(context).increment,
+          tooltip: context.i18n.increment,
           child: const Icon(Icons.add),
         ),
         const SizedBox(height: 16.0),
         FloatingActionButton(
           onPressed: () => bloc.add(const CounterDecremented()),
-          tooltip: AppLocal.of(context).decrement,
+          tooltip: context.i18n.decrement,
           child: const Icon(Icons.remove),
         ),
       ],

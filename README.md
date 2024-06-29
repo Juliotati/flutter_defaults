@@ -20,7 +20,7 @@ cd flutter_defaults;
 
 flutter clean;
 dart pub get;
-dart pub run build_runner build --delete-conflicting-outputs;
+dart run build_runner build --delete-conflicting-outputs;
 ```
 
 Build and install the Flutter app to your connected device/emulator.

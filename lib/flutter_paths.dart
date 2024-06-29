@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_defaults/core/config/app_router.dart';
 import 'package:flutter_defaults/core/config/localization_delegates.dart';
+import 'package:flutter_defaults/core/extensions/context.dart';
 import 'package:flutter_defaults/generated/l10n.dart';
-import 'package:go_router/go_router.dart';
 
-const String defaultTitle = 'Flutter Defaults';
-
-class FlutterPaths extends StatelessWidget {
+final class FlutterPaths extends StatelessWidget {
   const FlutterPaths({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: defaultTitle,
+      title: 'Flutter Paths',
       debugShowCheckedModeBanner: false,
       localizationsDelegates: localizationDelegates(),
       theme: ThemeData(
@@ -28,14 +26,14 @@ class FlutterPaths extends StatelessWidget {
   }
 }
 
-class FlutterPathsScreen extends StatefulWidget {
-  const FlutterPathsScreen({super.key});
+final class PathsScreen extends StatefulWidget {
+  const PathsScreen({super.key});
 
   @override
-  State<FlutterPathsScreen> createState() => _FlutterPathsScreenState();
+  State<PathsScreen> createState() => _PathsScreenState();
 }
 
-class _FlutterPathsScreenState extends State<FlutterPathsScreen> {
+class _PathsScreenState extends State<PathsScreen> {
   String languageCode = 'en';
 
   void _toggleLanguage() {
@@ -46,50 +44,59 @@ class _FlutterPathsScreenState extends State<FlutterPathsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final locale = AppLocal.of(context);
-    final textTheme = Theme.of(context).textTheme;
+    final locale = context.i18n;
+    final textTheme = context.textTheme;
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(40.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Spacer(flex: 3),
-            Text(
-              locale.paths,
-              style: textTheme.headlineLarge?.copyWith(
-                fontSize: 60.0,
-                fontWeight: FontWeight.bold,
-              ),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 650.0),
+          child: Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Spacer(flex: 3),
+                Text(
+                  '${locale.paths} 🛣️',
+                  style: textTheme.headlineLarge?.copyWith(
+                    fontSize: 60.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 40),
+                PathButton(
+                  label: locale.pathBloc,
+                  onPressed: () => context.navigate(AppRoute.blocPath),
+                ),
+                PathButton(
+                  label: locale.pathRiverpod,
+                  onPressed: () => context.navigate(AppRoute.riverpodPath),
+                ),
+                PathButton(
+                  label: locale.pathProvider,
+                  onPressed: () => context.navigate(AppRoute.providerPath),
+                ),
+                const Spacer(),
+                PathButton(
+                  label: '${locale.changeLanguage} [$languageCode]',
+                  onPressed: _toggleLanguage,
+                ),
+              ],
             ),
-            const SizedBox(height: 40),
-            PathsButton(
-              label: locale.pathBloc,
-              onPressed: () => context.pushNamed(AppRoute.blocPath.name),
-            ),
-            PathsButton(
-              label: locale.pathRiverpod,
-              onPressed: () => context.pushNamed(AppRoute.riverpodPath.name),
-            ),
-            PathsButton(
-              label: locale.pathProvider,
-              onPressed: () => context.pushNamed(AppRoute.providerPath.name),
-            ),
-            const Spacer(),
-            PathsButton(
-              label: '${locale.changeLanguage} [$languageCode]',
-              onPressed: _toggleLanguage,
-            ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
 
-class PathsButton extends StatelessWidget {
-  const PathsButton({required this.label, required this.onPressed, super.key});
+final class PathButton extends StatelessWidget {
+  const PathButton({
+    required this.label,
+    required this.onPressed,
+    super.key,
+  });
 
   final String label;
   final VoidCallback onPressed;

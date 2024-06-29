@@ -46,8 +46,8 @@ class CounterProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void _cacheCounterValue() {
-    _saveCounterValue.call(CounterParams(_count));
+  Future<void> _cacheCounterValue() async {
+    await _saveCounterValue.call(CounterParams(_count));
     log('CACHED COUNTER VALUE');
   }
 

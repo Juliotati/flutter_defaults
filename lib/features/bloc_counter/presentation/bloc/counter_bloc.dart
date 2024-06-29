@@ -7,7 +7,7 @@ import 'package:flutter_defaults/features/bloc_counter/presentation/bloc/bloc_ev
 import 'package:flutter_defaults/features/bloc_counter/presentation/bloc/bloc_state.dart';
 import 'package:injectable/injectable.dart';
 
-class CounterBloc extends Bloc<CounterEvent, CounterState> {
+final class CounterBloc extends Bloc<CounterEvent, CounterState> {
   CounterBloc(@Named.from(CounterRepositoryImpl) this._repository)
       : super(const CounterValidState(0)) {
     on<CounterIncremented>(_increment);
@@ -54,30 +54,12 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
   void onEvent(CounterEvent event) {
     super.onEvent(event);
 
-    if (event is CounterIncremented) {
-      _logCounterIncremented();
-    } else if (event is CounterDecremented) {
-      _logCounterDecremented();
-    } else if (event is CacheCounterValue) {
-      _logCachedCounter();
-    } else if (event is RestoreCounterValue) {
-      _logRestoredCounter();
-    }
-  }
-
-  void _logCounterIncremented() {
-    log('COUNTER INCREMENTED');
-  }
-
-  void _logCounterDecremented() {
-    log('COUNTER DECREMENTED');
-  }
-
-  void _logCachedCounter() {
-    log('COUNTER CACHED');
-  }
-
-  void _logRestoredCounter() {
-    log('COUNTER RESTORED');
+    return switch (event) {
+      CacheCounterValue value => log('COUNTER CACHED: ${value.count}'),
+      GetCounterValue() => log('GET COUNTER VALUE'),
+      CounterIncremented() => log('COUNTER INCREMENTED'),
+      CounterDecremented() => log('COUNTER DECREMENTED'),
+      RestoreCounterValue() => log('COUNTER RESTORED'),
+    };
   }
 }

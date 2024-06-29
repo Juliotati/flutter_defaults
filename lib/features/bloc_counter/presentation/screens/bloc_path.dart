@@ -1,6 +1,6 @@
 part of '../../bloc_counter.dart';
 
-class BlocPath extends StatefulWidget {
+final class BlocPath extends StatefulWidget {
   const BlocPath({super.key});
 
   @override
@@ -11,15 +11,15 @@ class _BlocPathState extends State<BlocPath> {
   late String appBarTitle;
 
   void _setPathTitle() {
-    appBarTitle = AppLocal.current.flutterPaths;
+    appBarTitle = context.i18n.flutterPaths;
     Future.delayed(const Duration(milliseconds: 100), () {
-      setState(() => appBarTitle = AppLocal.current.pathBloc);
+      setState(() => appBarTitle = context.i18n.pathBloc);
     });
   }
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     _setPathTitle();
   }
 
@@ -29,13 +29,13 @@ class _BlocPathState extends State<BlocPath> {
       providers: [
         BlocProvider(
           create: (_) => CounterBloc(
-            getIt.get<CounterRepository>(instanceName: 'CounterRepositoryImpl'),
+            sl.get<CounterRepository>(instanceName: 'CounterRepositoryImpl'),
           ),
         ),
       ],
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          backgroundColor: context.colorScheme.inversePrimary,
           title: AnimatedSwitcher(
             switchInCurve: Curves.easeIn,
             duration: const Duration(milliseconds: 1000),
