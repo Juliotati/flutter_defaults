@@ -15,12 +15,12 @@ If you are new to Flutter, please first follow the [Flutter Setup](https://flutt
 ### Building and installing the Flutter Defaults app
 
 ```
-git clone https://github.com/juliotati/flutter_defaults.git
-cd flutter_defaults
+git clone https://github.com/juliotati/flutter_defaults.git;
+cd flutter_defaults;
 
-flutter clean
-flutter pub get
-flutter packages pub run build_runner build --delete-conflicting-outputs
+flutter clean;
+dart pub get;
+dart pub run build_runner build --delete-conflicting-outputs;
 ```
 
 Build and install the Flutter app to your connected device/emulator.
